@@ -1,0 +1,57 @@
+{
+  "landingPage": "wp-admin/admin.php?page=wp-post-author",
+  "preferredVersions": {
+    "php": "7.4",
+    "wp": "latest"
+  },
+  "phpExtensionBundles": [
+    "kitchen-sink"
+  ],
+  "features": {
+    "networking": true
+  },  
+  "steps": [
+    {
+      "step": "login",
+      "username": "admin",
+      "password": "password"
+    },    
+    {
+      "step": "installPlugin",
+      "pluginZipFile": {
+        "resource": "wordpress.org\/plugins",
+        "slug": "wp-post-author"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeZipFile": {
+        "resource": "wordpress.org\/themes",
+        "slug": "morenews"
+      },
+      "options": {
+        "activate": false
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeZipFile": {
+        "resource": "wordpress.org\/themes",
+        "slug": "centralnews"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "importFile",
+      "file": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/afthemes/wpa.playground/refs/heads/main/wpa.playground.xml"
+      }
+    }
+  ]
+}
